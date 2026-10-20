@@ -109,8 +109,8 @@
     <script>
         // ===================== CONFIGURACIÓN =====================
         const BROKER_URL = "wss://bd8a2c7f.ala.us-east-1.emqxsl.com:8084/mqtt";
-        const MQTT_USER  = "USUARIO_WEB";
-        const MQTT_PASS  = "CLAVE_WEB";
+        const MQTT_USER  = "web_horno";
+        const MQTT_PASS  = "web_horno";
         const TOPIC_CMD    = "horno/cmd";
         const TOPIC_ESTADO = "horno/estado";
         const SIN_DATOS_MS = 15000;
