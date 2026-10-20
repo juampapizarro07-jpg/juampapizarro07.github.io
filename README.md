@@ -248,7 +248,3 @@
 </script>
 </body>
 </html>
-    render();
-</script>
-</body>
-</html>
