@@ -93,10 +93,10 @@
         <h3>Configurar ciclo</h3>
 
         <label>Temperatura: <b id="tempVal">150 °C</b></label>
-        <input type="range" id="tempSlider" min="1" max="450" value="150" oninput="updateSliderText()">
+        <input type="range" id="tempSlider" min="1" max="250" value="150" oninput="updateSliderText()">
 
         <label>Tiempo: <b id="timeVal">1 h</b></label>
-        <input type="range" id="timeSlider" min="1" max="120" value="60" oninput="updateSliderText()">
+        <input type="range" id="timeSlider" min="1" max="240" value="60" oninput="updateSliderText()">
 
         <button id="btnSend" onclick="enviarCiclo()" disabled>Enviar e iniciar</button>
         <button id="btnStop" class="btn-stop" onclick="detener()" disabled>Detener</button>
@@ -185,7 +185,7 @@
 
     function enviar(obj, texto) {
         if (!brokerOk) { mensaje("Sin conexión con el broker"); return; }
-        // Los comandos NO van retenidos, para que no se repitan al reconectar
+        // Los comandos NO van retenidos, para que no se repiten al reconectar
         client.publish(TOPIC_CMD, JSON.stringify(obj), { qos: 1, retain: false }, err => {
             mensaje(err ? "Error al enviar" : texto);
         });
@@ -244,6 +244,10 @@
 
     setInterval(render, 500);
     updateSliderText();
+    render();
+</script>
+</body>
+</html>
     render();
 </script>
 </body>
